@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'npm run test'
+                sh './jenkins/scripts/test.sh' 
             }
         }
         stage('Manual Approval') { 
