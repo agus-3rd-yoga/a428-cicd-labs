@@ -1,9 +1,9 @@
 node {
     stage('Clone Repo') {
-#        git branch: 'react-app', url:'https://github.com/agus-3rd-yoga/a428-cicd-labs.git'
-        git branch: 'react-app', file:'/home/project/a428-cicd-labs'
+        git branch: 'react-app', url:'https://github.com/agus-3rd-yoga/a428-cicd-labs.git'
     }
 }
+
 pipeline {
     agent {
         docker {
