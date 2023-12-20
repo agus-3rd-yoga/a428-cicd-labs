@@ -1,6 +1,7 @@
 node {
     stage('Clone Repo') {
-        git branch: 'react-app', url:'https://github.com/agus-3rd-yoga/a428-cicd-labs.git'
+#        git branch: 'react-app', url:'https://github.com/agus-3rd-yoga/a428-cicd-labs.git'
+        git branch: 'react-app', file:'/home/project/a428-cicd-labs'
     }
 }
 pipeline {
@@ -23,8 +24,8 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh './jenkins/scripts/deliver.sh' 
-                input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)' 
+                sh './jenkins/scripts/deliver.sh'
+                sh 'sleep 60'
                 sh './jenkins/scripts/kill.sh'
             }
         }
