@@ -15,6 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
+                sh 'npm install react-dom/client'
             }
         }
         stage('Test') { 
@@ -30,7 +31,6 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh 'npm install react-dom/client'
                 sh './jenkins/scripts/deliver.sh'
                 sh 'sleep 60'
                 sh './jenkins/scripts/kill.sh'
