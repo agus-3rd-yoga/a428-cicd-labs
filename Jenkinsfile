@@ -22,6 +22,11 @@ pipeline {
                 sh 'npm run test'
             }
         }
+        stage('Manual Approval') { 
+            steps {
+                input message: 'Lanjut ke tahap deploy? (Klik "Proceed" untuk melanjutkan eksekusi pipeline ke tahap Deploy)'
+            }
+        }
         stage('Deploy') { 
             steps {
                 sh './jenkins/scripts/deliver.sh'
