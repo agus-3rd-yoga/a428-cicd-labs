@@ -15,7 +15,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-                sh 'npm install react-dom/client'
             }
         }
         stage('Test') { 
