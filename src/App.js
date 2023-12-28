@@ -192,7 +192,7 @@ function App() {
 
             <UTCDatetime />
             <Link
-              href="https://github.com/agus-3rd-yoga/weather-app"
+              href="https://github.com/agus-3rd-yoga/a428-cicd-labs"
               target="_blank"
               underline="none"
               sx={{ display: 'flex' }}
