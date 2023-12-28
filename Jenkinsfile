@@ -33,8 +33,9 @@ pipeline {
         stage('Deploy') { 
             steps {
                 sh  './jenkins/scripts/deliver.sh'
-                sh  'npm install --save gh-pages'
                 sh  'sleep 60'
+                sh  'npm install --save gh-pages'
+                sh  'npm run deploy'
                 sh  './jenkins/scripts/kill.sh'
             }
         }
