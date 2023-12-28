@@ -1,9 +1,8 @@
 {
   "name": "my-weather-app",
   "version": "1.0.0",
-  "homepage": "https://agus-3rd-yoga.github.io/a428-cicd-labs",
   "author": {
-    "name": "agus tri yoga",
+    "name": "agus-3rd-yoga",
     "email": "agus3rdyoga@gmail.com"
   },
 
@@ -21,8 +20,6 @@
     "react-select-async-paginate": "^0.6.1"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
