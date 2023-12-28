@@ -32,7 +32,10 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
-  },  
+  },
+  "homepage" : {
+    "https://agus-3rd-yoga.github.io/a428-cicd-labs"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
