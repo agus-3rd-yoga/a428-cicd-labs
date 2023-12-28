@@ -1,10 +1,12 @@
 {
-  "name": "weather-app",
+  "name": "my-weather-app",
   "version": "1.0.0",
+  "homepage": "https://agus-3rd-yoga.github.io/a428-cicd-labs",
   "author": {
     "name": "agus tri yoga",
     "email": "agus3rdyoga@gmail.com"
   },
+
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -24,18 +26,14 @@
     "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "homepage" : {
-    "https://agus-3rd-yoga.github.io/a428-cicd-labs"
-  },
+
   "browserslist": {
     "production": [
       ">0.2%",
