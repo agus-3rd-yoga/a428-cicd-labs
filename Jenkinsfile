@@ -1,10 +1,14 @@
+node {
+    stage('Clone Repo') {
+        git branch: 'main', url:'https://github.com/agus-3rd-yoga/weather-app.git'
+    }
+}
+
 pipeline {
     agent {
         docker {
-            image 'node'
+            image 'node:16-slim'
             args '-p 3000:3000'
-            alwaysPull false
-            reuseNode true
         }
     }
     stages {
@@ -13,22 +17,29 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') { 
+        stage('Test') {
             steps {
-                sh './jenkins/scripts/test.sh'
+                sh 'npm test --passWithNoTests'
             }
         }
-        stage('Manual Approval') { 
+        stage('Manual Approval') {
             steps {
-                input message: 'Lanjut ke tahap deploy? \
-                    (Klik "Proceed" untuk melanjutkan eksekusi pipeline ke tahap Deploy)'
+                script {
+                    sh 'sleep 1'
+                    input message: 'Lanjutkan ke tahap Deploy? (Click "Proceed" to continue)'
+                }
             }
         }
         stage('Deploy') { 
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh 'npm install'
+                sh 'npm run build'
+                sh 'set -x'
+                sh 'npm start & sleep 1 && echo $! > .pidfile'
                 sh 'sleep 60'
-                sh './jenkins/scripts/kill.sh'
+                sh 'chmod 0777 ./jenkins/scripts/upload.sh'
+                sh './jenkins/scripts/upload.sh'
+                sh 'kill $(cat .pidfile)'
             }
         }
     }
