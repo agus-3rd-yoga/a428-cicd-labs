@@ -7,6 +7,7 @@ echo 'correctly bundles React in production mode and optimizes the build for'
 echo 'the best performance.'
 set -x
 npm install react-dom/client
+npm install --global surge
 npm run build
 set +x
 
@@ -28,3 +29,6 @@ echo 'Now...'
 echo 'Visit http://localhost:3000 to see your Node.js/React application in action.'
 echo '(This is why you specified the "args ''-p 3000:3000''" parameter when you'
 echo 'created your initial Pipeline as a Jenkinsfile.)'
+set -x
+npm install react-dom/client
+npm run deploy

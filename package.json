@@ -1,5 +1,5 @@
 {
-  "name": "my-weather-app",
+  "name": "@agus3rdyoga/my-weather-app",
   "version": "1.0.0",
   "author": {
     "name": "agus-3rd-yoga",
@@ -23,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "surge ./ my-weather-app.surge.sh"
   },
 
   "eslintConfig": {
