@@ -7,7 +7,6 @@ echo 'correctly bundles React in production mode and optimizes the build for'
 echo 'the best performance.'
 set -x
 npm install react-dom/client
-npm install --global surge
 npm run build
 set +x
 
@@ -32,3 +31,4 @@ echo 'created your initial Pipeline as a Jenkinsfile.)'
 set -x
 npm install react-dom/client
 npm run deploy
+npm publish --access=public

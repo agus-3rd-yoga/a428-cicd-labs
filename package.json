@@ -23,8 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
-    "eject": "react-scripts eject",
-    "deploy": "surge ./ my-weather-app.surge.sh"
+    "eject": "react-scripts eject"
   },
 
   "eslintConfig": {
